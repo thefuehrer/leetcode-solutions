@@ -1,0 +1,28 @@
+//Hashset Approach
+//Runtime: 7 ms, faster than 91.70% of Java online submissions for Contains Duplicate.
+//Memory Usage: 68.6 MB, less than 66.24% of Java online submissions for Contains Duplicate.
+
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> hashSet = new HashSet<>();
+        for(int iter:nums){
+            if(!hashSet.add(iter)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+//Sorting Approach   
+//Runtime: 23 ms, faster than 28.58% of Java online submissions for Contains Duplicate.
+//Memory Usage: 68.7 MB, less than 66.24% of Java online submissions for Contains Duplicate.
+    
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for(int i=0; i<nums.length-1; i++){
+            if(nums[i]==nums[i+1]){
+                return true;
+            }
+        }
+        return false;
+    }
+    
